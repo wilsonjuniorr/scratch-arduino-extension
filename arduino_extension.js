@@ -628,6 +628,49 @@
       ['-'],
       ['r', 'zet %n van %n %n tot %n %n', 'mapValues', 50, 0, 100, -240, 240]
     ]
+    pt: [
+      ['h', 'Quando dispositivo estiver conectado', 'whenConnected'],
+      [' ', 'conectar%m.hwOut para pino %n', 'connectHW', 'led A', 3],
+      [' ', 'conectar %m.hwIn para analogico %n', 'connectHW', 'potenciometro', 0],
+      ['-'],
+      [' ', 'estado %m.leds %m.outputs', 'digitalLED', 'led A', 'ligado'],
+      [' ', 'estado %m.leds brilho to %n%', 'setLED', 'led A', 100],
+      [' ', 'mudar %m.leds brilho em %n%', 'changeLED', 'led A', 20],
+      ['-'],
+      [' ', 'girar %m.servos para %n graus', 'rotateServo', 'servo A', 180],
+      [' ', 'girar %m.servos em %n graus', 'changeServo', 'servo A', 20],
+      ['-'],
+      ['h', 'quando %m.buttons is %m.btnStates', 'whenButton', 'botao A', 'pressionado'],
+      ['b', '%m.buttons pressionado?', 'isButtonPressed', 'botao A'],
+      ['-'],
+      ['h', 'quando %m.hwIn %m.ops %n%', 'whenInput', 'potenciometro', '>', 50],
+      ['r', 'read %m.hwIn', 'readInput', 'potenciometro'],
+      ['-'],
+      [' ', 'estado digital pino %n %m.outputs', 'digitalWrite', 1, 'ligado'],
+      [' ', 'estado analogico pino %n to %n%', 'analogWrite', 3, 100],
+      ['-'],
+      ['h', 'quando pino %n is %m.outputs', 'whenDigitalRead', 1, 'ligado'],
+      ['b', 'pino %n ligado?', 'digitalRead', 1], 
+      ['-'],
+      ['h', 'quando valor analogico %n %m.ops %n%', 'whenAnalogRead', 1, '>', 50],
+      ['r', 'ler valor analogico %n', 'analogRead', 0], 
+      ['-'],
+      ['r', 'mapear %n from %n %n to %n %n', 'mapValues', 50, 0, 100, -240, 240]
+    ]
+  }
+
+var menus = {
+pt: {
+buttons: ['botao A', 'botao B', 'botao C', 'botao D'],
+btnStates: ['pressionado', 'solto'],
+hwIn: ['potenciometro', 'sensor de luz', 'sensor de temperatura'],
+hwOut: ['led A', 'led B', 'led C', 'led D', 'botao A', 'botao B', 'botao C', 'botao D', 'servo A', 'servo B', 'servo C', 'servo D'],
+leds: ['led A', 'led B', 'led C', 'led D'],
+outputs: ['ligado', 'desligado'],
+ops: ['>', '=', '<'],
+servos: ['servo A', 'servo B', 'servo C', 'servo D']
+}
+};
   };
 
   var menus = {
